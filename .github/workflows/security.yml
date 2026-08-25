@@ -34,3 +34,11 @@ jobs:
       - name: Run Semgrep SAST
         run: |
           semgrep scan --config=p/python --error
+
+      - name: Install pip-audit
+        run: |
+          pip install pip-audit
+
+      - name: Run SCA dependency scan
+        run: |
+          pip-audit -r requirements.txt
