@@ -1,0 +1,5 @@
+[[rules]]
+id = "lab-hardcoded-secret"
+description = "Detect hardcoded lab secrets"
+regex = '''LAB_SECRET\s*=\s*["'][^"']+["']'''
+tags = ["secret", "lab"]
