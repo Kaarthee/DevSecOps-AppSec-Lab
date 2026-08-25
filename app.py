@@ -17,9 +17,9 @@ def index():
 
     if username:
         conn = get_db_connection()
-        
-        query = f"SELECT * FROM users WHERE username = '{username}'"
-        users = conn.execute(query).fetchall()
+       
+        query = "SELECT * FROM users WHERE username = ?"
+        users = conn.execute(query, (username,)).fetchall() 
 
         conn.close()
 
@@ -31,4 +31,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
