@@ -1,9 +1,10 @@
+import os
 from flask import Flask, render_template, request
 import sqlite3
 
 app = Flask(__name__)
 
-LAB_SECRET = "devsecops-demo-secret-12345"
+LAB_SECRET = os.getenv("LAB_SECRET")
 
 def get_db_connection():
     conn = sqlite3.connect("users.db")
