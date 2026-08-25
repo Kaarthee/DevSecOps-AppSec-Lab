@@ -42,3 +42,6 @@ jobs:
       - name: Run SCA dependency scan
         run: |
           pip-audit -r requirements.txt
+
+      - name: Run Gitleaks secret scan
+        uses: gitleaks/gitleaks-action@v2
